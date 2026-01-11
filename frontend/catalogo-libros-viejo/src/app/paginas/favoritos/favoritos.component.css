@@ -1,0 +1,23 @@
+.contenedor {
+  padding: 1rem;
+}
+
+.lista-favoritos {
+  list-style: none;
+  padding: 0;
+}
+
+.item-favorito {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.portada img {
+  max-width: 80px;
+}
+
+.error {
+  color: red;
+}

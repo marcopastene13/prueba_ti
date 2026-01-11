@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PruebaTi.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3f610052e91b747ba8ee28eb5dce6c10ae55660")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a06538dfca22bfd1da5238ce9c67e14039fb0ac1")]
 [assembly: System.Reflection.AssemblyProductAttribute("PruebaTi.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PruebaTi.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

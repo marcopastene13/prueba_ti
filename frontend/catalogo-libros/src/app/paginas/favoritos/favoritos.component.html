@@ -1,0 +1,33 @@
+<div class="contenedor">
+  <h1>Mis favoritos</h1>
+
+  <div *ngIf="estaCargando">
+    <p>Cargando favoritos...</p>
+  </div>
+
+  <p *ngIf="mensajeError" class="error">{{ mensajeError }}</p>
+
+  <div *ngIf="!estaCargando && favoritos.length === 0 && !mensajeError">
+    <p>No tienes libros favoritos aún.</p>
+  </div>
+
+  <ul class="lista-favoritos" *ngIf="favoritos.length > 0">
+    <li *ngFor="let favorito of favoritos" class="item-favorito">
+      <div class="portada" *ngIf="favorito.urlPortada">
+        <img [src]="favorito.urlPortada" [alt]="favorito.titulo" />
+      </div>
+      <div class="detalle">
+        <h3>{{ favorito.titulo }}</h3>
+        <p *ngIf="favorito.autores">
+          Autores: {{ favorito.autores }}
+        </p>
+        <p *ngIf="favorito.anioPrimeraPublicacion">
+          Año: {{ favorito.anioPrimeraPublicacion }}
+        </p>
+        <button (click)="eliminar(favorito)">
+          Eliminar
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

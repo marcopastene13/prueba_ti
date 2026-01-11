@@ -1,0 +1,43 @@
+<div class="contenedor">
+  <h1>Catálogo de libros</h1>
+
+  <div class="buscador">
+    <input
+      type="text"
+      [(ngModel)]="textoBusqueda"
+      placeholder="Buscar por título o autor" />
+
+    <button (click)="buscar()" [disabled]="estaBuscando">
+      {{ estaBuscando ? 'Buscando...' : 'Buscar' }}
+    </button>
+  </div>
+
+  <div class="mensajes">
+    <p *ngIf="mensajeError" class="error">{{ mensajeError }}</p>
+    <p *ngIf="mensajeExito" class="exito">{{ mensajeExito }}</p>
+  </div>
+
+  <div *ngIf="libros.length === 0 && !estaBuscando">
+    <p>No hay resultados para mostrar.</p>
+  </div>
+
+  <ul class="lista-libros" *ngIf="libros.length > 0">
+    <li *ngFor="let libro of libros" class="item-libro">
+      <div class="portada" *ngIf="libro.urlPortada">
+        <img [src]="libro.urlPortada" [alt]="libro.titulo" />
+      </div>
+      <div class="detalle">
+        <h3>{{ libro.titulo }}</h3>
+        <p *ngIf="libro.autores.length">
+          Autores: {{ libro.autores.join(', ') }}
+        </p>
+        <p *ngIf="libro.anioPrimeraPublicacion">
+          Año: {{ libro.anioPrimeraPublicacion }}
+        </p>
+        <button (click)="agregarAFavoritos(libro)">
+          Agregar a favoritos
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
